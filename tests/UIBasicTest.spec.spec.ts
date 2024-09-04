@@ -13,3 +13,9 @@ test('UIBasicTest - Browser datas', async ({page,browser}) => {
     await page.goto('https://playwright.dev/');
 
 });
+
+test.only('Correct title - playwright page test', async ({page,browser}) => {
+    await page.goto('https://demo.playwright.dev/todomvc');
+    const title = await page.title();
+    await expect(page).toHaveTitle('React • TodoMVC');
+});
