@@ -2,7 +2,7 @@ import {expect} from "@playwright/test";
 import {test} from "../fixtures/firstFixtures";
 
 test.beforeEach(async ({ firstPage }) => {
-    await firstPage.navigateToPlaywright();
+    await firstPage.navigateToMS();
 });
 
 const TODO_ITEMS = [

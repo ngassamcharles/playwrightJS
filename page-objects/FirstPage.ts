@@ -4,20 +4,19 @@ export class FirstPage{
 
     constructor(private page: Page) {}
 
-    public newTodo: Locator = this.page.getByPlaceholder('What needs to be done?');
     public todoTitle: Locator = this.page.getByTestId('todo-title');
+    public newTodo2: Locator = this.page.locator('#new-task');
 
-    async navigateToPlaywright(): Promise<void> {
-        await this.page.goto('https://demo.playwright.dev/todomvc');
+    async navigateToMS(): Promise<void> {
+        await this.page.goto('https://microsoftedge.github.io/Demos/demo-to-do/');
     }
 
     async fillToDo(text: string): Promise<void> {
-         await this.newTodo.fill(text);
+        await this.newTodo2.fill(text);
     }
 
     async enterPress(): Promise<void> {
-        await this.newTodo.press('Enter');
+        await this.newTodo2.press('Enter');
     }
 
 }
-
